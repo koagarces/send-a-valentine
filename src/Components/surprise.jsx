@@ -46,14 +46,13 @@ const Surprise = () => {
       setAnswer("I have to decline, sorry!");
     }
   };
-  console.log(answer);
 
   useEffect(() => {
     setTimeout(() => {
       document.getElementById("letter").style.display = "none";
     }, "2000");
     setTimeout(() => {
-      document.getElementById("message").style.display = "block";
+      document.getElementById("message").style.display = "flex";
     }, "2001");
   }, []);
 
@@ -63,6 +62,7 @@ const Surprise = () => {
 
       <Form id="message" ref={form} onSubmit={sendEmail}>
         <h3>{name} will you be my Valentine?</h3>
+        <img src={require("../heart.gif")} alt="Be Mine!" />
         <ToggleButtonGroup
           color="primary"
           value={alignment}
@@ -70,15 +70,30 @@ const Surprise = () => {
           onChange={handleChange}
           aria-label="Platform"
         >
-          <ToggleButton value="yes">yes</ToggleButton>
-          <ToggleButton value="no">no</ToggleButton>
+          <ToggleButton className="toggButt" value="yes">
+            yes
+          </ToggleButton>
+          <ToggleButton className="toggButt" value="no">
+            no
+          </ToggleButton>
         </ToggleButtonGroup>
         <div className="data">
           <input name="to_email" value={reply} />
           <input name="Val_name" value={from} />
           <input name="responce" value={answer} />
         </div>
-        <Button variant="contained" type="submit" endIcon={<SendIcon />}>
+        <Button
+          className="sendButt"
+          variant="contained"
+          type="submit"
+          endIcon={<SendIcon />}
+          sx={{
+            backgroundColor: "red",
+            "&:hover": {
+              background: "pink",
+            },
+          }}
+        >
           Send
         </Button>
       </Form>
