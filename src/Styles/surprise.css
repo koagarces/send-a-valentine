@@ -40,8 +40,6 @@
   width: 80vw;
 }
 
-/* #letter:active {
-  animation: open 3s;
-  
-
-} */
+.data {
+  display: none;
+}

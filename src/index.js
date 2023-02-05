@@ -15,7 +15,10 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
       <Route index element={<Send />} />
-      <Route path="/surprise/:replyEmail/:id" element={<Surprise />} />
+      <Route
+        path="/surprise/:fromName/:replyEmail/:id"
+        element={<Surprise />}
+      />
     </Route>
   )
 );
