@@ -14,11 +14,8 @@ import App from "./App.js";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
-      <Route index element={<Send />} />
-      <Route
-        path="/surprise/:fromName/:replyEmail/:id"
-        element={<Surprise />}
-      />
+      <Route index element={<Surprise />} />
+      <Route path="/surprise" element={<Send />} />
     </Route>
   )
 );

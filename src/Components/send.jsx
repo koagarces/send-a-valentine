@@ -1,5 +1,5 @@
 import { TextField } from "@mui/material";
-import { Form } from "react-router-dom";
+import { Form, Link } from "react-router-dom";
 import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
 
@@ -28,10 +28,12 @@ const Send = () => {
 
   return (
     <div>
-      <h2>Welcome to BeMine</h2>
-      <h3>
-        Fill out the form below to send a Valentine to that special person!
-      </h3>
+      <div className="landingTitle">
+        <h2>Welcome to BeMine</h2>
+        <h3>
+          Fill out the form below to send a Valentine to that special person!
+        </h3>
+      </div>
       <Form ref={form} onSubmit={sendEmail}>
         <TextField
           id="standard-basic"

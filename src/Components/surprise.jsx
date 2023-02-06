@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Form, useParams } from "react-router-dom";
+import { Form } from "react-router-dom";
 import "../Styles/surprise.css";
 import letter from "../letterpic.jpg";
 import { Button, TextField } from "@mui/material";
@@ -10,10 +10,6 @@ import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 
 const Surprise = () => {
   const form = useRef();
-  const routeParams = useParams();
-  const name = routeParams.id;
-  const reply = routeParams.replyEmail;
-  const from = routeParams.fromName;
   const [answer, setAnswer] = useState("");
   const [alignment, setAlignment] = React.useState("web");
 
@@ -59,10 +55,19 @@ const Surprise = () => {
   return (
     <div>
       <img id="letter" className="letterPic" src={letter} alt="loading..." />
-
       <Form id="message" ref={form} onSubmit={sendEmail}>
-        <h3>{name} will you be my Valentine?</h3>
+        <h3>Will you be my Valentine?</h3>
         <img src={require("../heart.gif")} alt="Be Mine!" />
+        <TextField
+          id="standard-basic"
+          label="Their Email"
+          type="email"
+          variant="standard"
+          name="to_email"
+          sx={{
+            padding: "3%",
+          }}
+        />
         <ToggleButtonGroup
           color="primary"
           value={alignment}
@@ -78,8 +83,6 @@ const Surprise = () => {
           </ToggleButton>
         </ToggleButtonGroup>
         <div className="data">
-          <input name="to_email" value={reply} />
-          <input name="Val_name" value={from} />
           <input name="responce" value={answer} />
         </div>
         <Button
@@ -92,6 +95,7 @@ const Surprise = () => {
             "&:hover": {
               background: "pink",
             },
+            margin: "2%",
           }}
         >
           Send

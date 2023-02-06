@@ -1,11 +1,11 @@
 @keyframes openMail {
   0% {
-    transform: scale(0.5);
+    transform: scale(0.1);
     opacity: 100%;
   }
 
   100% {
-    transform: scale(2);
+    transform: scale(0.5);
     opacity: 0;
   }
 }
@@ -44,4 +44,16 @@
 
 .data {
   display: none;
+}
+
+/* .inputClass {
+  display: flex;
+} */
+
+.sendButt {
+  padding: 2%;
+}
+
+.emailClass {
+  padding: 2%;
 }
